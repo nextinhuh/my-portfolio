@@ -46,11 +46,10 @@ const Header: React.FC<FlexProps> = (props) => {
           pt={[4, 4, 0, 0]}
         >
           <MenuItem to="/">HOME</MenuItem>
-          <MenuItem to="/">ABOUT</MenuItem>
-          <MenuItem to="/how">SERVICES </MenuItem>
+          <MenuItem to="/">SOBRE MIM</MenuItem>
+          <MenuItem to="/how">SERVIÇOS </MenuItem>
           <MenuItem to="/faetures">PORTFOLIO </MenuItem>
-          <MenuItem to="/pricing">BLOG </MenuItem>
-          <MenuItem to="/signup" isLast>CONTACT</MenuItem>
+          <MenuItem to="/signup" isLast>CONTATOS</MenuItem>
         </Flex>
       </Box>
     </Flex>

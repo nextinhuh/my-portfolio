@@ -1,14 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { ChakraProvider } from '@chakra-ui/react';
 
 import Routes from './routes';
-
-import GlobalStyles from './styles/global';
+import customTheme from './utils/theme';
 
 const App: React.FC = () => (
   <Router>
-    <Routes />
-    <GlobalStyles />
+    <ChakraProvider theme={customTheme}>
+      <Routes />
+    </ChakraProvider>
   </Router>
 );
 

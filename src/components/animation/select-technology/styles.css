@@ -1,0 +1,30 @@
+.example-container div {
+  background: white;
+  border-radius: 30px;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.example-container .drag-area {
+  opacity: 0.2;
+  width: 30vw;
+  height: 20vh;
+  border-radius: 30px;
+}
+
+.refresh {
+  padding: 10px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

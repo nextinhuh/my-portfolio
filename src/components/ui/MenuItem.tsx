@@ -14,6 +14,8 @@ const MenuItem: React.FC<MenuItemProps> = ({
     mb={{ base: isLast ? 0 : 8, sm: 0 }}
     mr={{ base: 0, sm: isLast ? 0 : 8 }}
     display="block"
+    color="cyan.50"
+    fontWeight="bold"
     {...rest}
   >
     <Link to={to}>{children}</Link>

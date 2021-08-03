@@ -10,9 +10,9 @@ export default createGlobalStyle`
   body {
     height: 100%;
     -webkit-font-smoothing: antialiased;
+    background-color: #7D808C;
   }
   body, input, button {
-    font-family: 'Trocchi', serif;
     font-size: 18px;
   }
   h1, h2, h3, h4, h5, h6, p, strong {
