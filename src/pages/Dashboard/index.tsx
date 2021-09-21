@@ -1,16 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react';
+import React from 'react';
 import {
-  Box, Text, Icon, Flex, Stack, Divider, HStack, Grid, Link as ChakraLink,
+  Box, Text, Icon, Flex, Stack, Divider, HStack, Link as ChakraLink,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import { Link, animateScroll as scroll } from 'react-scroll';
+import { Link } from 'react-scroll';
 import {
   FiChevronsDown, FiFacebook, FiGithub, FiGlobe, FiLinkedin, FiMail, FiMapPin, FiMenu, FiSmartphone,
 } from 'react-icons/fi';
 
 import backgroundImage from '../../assets/back-ground.jpg';
-import Item from '../../components/Item';
 import TechnologyList from '../../components/TechnologyList';
 
 import springLogo from '../../assets/spring-logo.svg';
@@ -22,9 +21,6 @@ import Subtitle from '../../components/Subtitle';
 import WorkGrid from '../../components/WorkGrid';
 
 const Dashboard: React.FC = () => {
-  const [gradient, setGradient] = useState('linear-gradient(90deg, rgba(94,101,156,1) 27%, rgba(168,87,87,1) 100%)');
-  const [reactActive, setReactActive] = useState(false);
-  const [angularActive, setAngularActive] = useState(false);
   const MotionBox = motion(Box);
   const techList = [
     {

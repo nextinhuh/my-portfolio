@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import {
-  ListItem, Box, Text, Image, Flex,
+  Box, Text, Image, Flex,
 } from '@chakra-ui/react';
-import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface Technology {
   name: string;
