@@ -4,6 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 
 import Routes from './routes';
 import customTheme from './utils/theme';
+import '@fontsource/roboto-slab';
 
 const App: React.FC = () => (
   <Router>

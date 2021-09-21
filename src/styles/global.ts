@@ -10,7 +10,6 @@ export default createGlobalStyle`
   body {
     height: 100%;
     -webkit-font-smoothing: antialiased;
-    background-color: #7D808C;
   }
   body, input, button {
     font-size: 18px;
