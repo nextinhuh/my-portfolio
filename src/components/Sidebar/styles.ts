@@ -1,8 +1,12 @@
+import { Link, LinkProps } from 'react-scroll';
 import styled, { css } from 'styled-components';
 
 interface SidebarStatusOpenStyleProp {
   isOpened?: boolean;
-  active?: boolean;
+}
+
+interface NavItemListStatusOpenStyleProp extends LinkProps {
+  isOpened?: boolean;
 }
 
 export const Container = styled.div<SidebarStatusOpenStyleProp>`
@@ -55,14 +59,18 @@ export const NavContainer = styled.nav<SidebarStatusOpenStyleProp>`
 
 export const NavList = styled.ul<SidebarStatusOpenStyleProp>`
   ${({ isOpened }) => css`
-    display: ${isOpened ? '' : 'flex'};
-    flex-direction: ${isOpened ? '' : 'column'};
-    align-items: ${isOpened ? '' : 'center'};
-    justify-items: ${isOpened ? '' : 'center'};
+    display: ${isOpened && 'flex'};
+    flex-direction: ${isOpened && 'column'};
+    align-items: ${isOpened && 'center'};
+    justify-items: ${isOpened && 'center'};
   `}
+
+  .active{
+    background: linear-gradient(126deg, rgba(41,72,107,1) 5%, rgba(17,95,166,1) 55%, rgba(0,23,84,1) 83%) !important;
+  }
 `;
 
-export const NavItemList = styled.li<SidebarStatusOpenStyleProp>`
+export const NavItemList = styled(Link) <NavItemListStatusOpenStyleProp>`
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -74,8 +82,7 @@ export const NavItemList = styled.li<SidebarStatusOpenStyleProp>`
   color: #fff;
   transition: .2s;
 
-  ${({ active, isOpened }) => css`
-    background: ${active ? '#ff328e' : ''} !important;
+  ${({ isOpened }) => css`
     width: ${isOpened ? '100%' : '50px'};
   `}
 
@@ -120,5 +127,4 @@ export const ToggleButton = styled.button`
         transparent 50%,
         rgba(10, 10, 10, .65) 10%
     );
-
 `;

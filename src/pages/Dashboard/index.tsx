@@ -6,6 +6,7 @@ import { Link } from 'react-scroll';
 import {
   FiChevronsDown, FiFacebook, FiGithub, FiGlobe, FiLinkedin, FiMail, FiMapPin, FiMenu, FiSmartphone,
 } from 'react-icons/fi';
+import { TypeAnimation } from 'react-type-animation';
 
 import backgroundImage from '../../assets/back-ground.jpg';
 import TechnologyList from '../../components/TechnologyList';
@@ -95,9 +96,22 @@ export function Dashboard() {
             Álvaro Neto
           </Text>
 
-          <Text fontSize={40}>
-            The Worst Front End Developer
-          </Text>
+          <TypeAnimation
+            sequence={[
+              'The', // Types 'One'
+              1000, // Waits 1s
+              'The Front-end Developer', // Deletes 'One' and types 'Two'
+              3000, // Waits 2s
+              'The DevOps', // Types 'Three' without deleting 'Two'
+              3000,
+              'An Eternal Student',
+              5000,
+            ]}
+            wrapper="div"
+            cursor
+            repeat={Infinity}
+            style={{ fontSize: '2.5em' }}
+          />
 
           <MotionBox
             mt="6"
@@ -114,7 +128,7 @@ export function Dashboard() {
             <ChakraLink _hover={{ color: '#5C66B8' }}>
               <Link
                 activeClass="active"
-                to="navigation"
+                to="skills"
                 spy
                 smooth
                 duration={500}
@@ -125,56 +139,20 @@ export function Dashboard() {
           </MotionBox>
         </Box>
 
-        <Flex
-          h="10vh"
-          id="navigation"
-          bg="black"
-          alignItems="center"
-          minW={{
-            base: '100%', sm: '80%', md: '100%', lg: '100%',
-          }}
-          justifyContent="space-between"
-        >
-          <ChakraLink _hover={{ color: '#5C66B8' }}>
-            <Link
-              activeClass="active"
-              to="header"
-              spy
-              smooth
-              duration={500}
-            >
-              <Text fontSize={25} fontWeight="bold" ml="20">
-                Álvaro Neto
-              </Text>
-            </Link>
-          </ChakraLink>
-
-          <Icon as={FiMenu} fontSize="30" mr="20" />
-        </Flex>
-
         <Box
           as="section"
-          id="services"
+          id="skills"
           display="flex"
           alignItems="center"
           justifyContent="center"
           flexDir="column"
           mt="24"
+          h="100vh"
         >
           <Subtitle text="Tecnologias" />
 
           <TechnologyList techList={techList} />
-        </Box>
 
-        <Box
-          as="section"
-          id="works"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          flexDir="column"
-          mt="15"
-        >
           <Subtitle text="Meus Trabalhos" />
 
           <WorkGrid workList={workList} mt="10" />
@@ -187,106 +165,106 @@ export function Dashboard() {
           alignItems="center"
           justifyContent="center"
           flexDir="column"
-          mt="20"
-          py="10"
           backgroundImage="https://technext.github.io/DarkJoe/assets/images/parallax.jpg"
           bgSize="cover"
           bgPosition="center"
           backgroundAttachment="fixed"
+          h="100vh"
         >
-          <Subtitle text="Heey!!" />
+          <Stack spacing={10}>
+            <Subtitle text="Heey!!" mt="10" />
 
-          <Flex justifyContent="space-between" w="60vw" spacing={40} mt="10">
-            <Box w="40%">
-              <Text fontSize={25} textAlign="left" mb="10">
-                Mais sobre mim
+            <Flex justifyContent="space-between" w="60vw" spacing={40} mt="10">
+              <Box w="40%">
+                <Text fontSize={25} textAlign="left" mb="10">
+                  Mais sobre mim
+                </Text>
+
+                <Text fontSize={18} textAlign="left">
+                  Comecei a programar a 5 anos atrás, terminei a faculdade,
+                  e venho estudando e trabalhando,
+                  com desenvolvimento de aplicações utilizando as tecnologias
+                  AngularJS e ReactJS, como também APIs com nodeJS + express,
+                  utilizando TypeScript,
+                  utilizando banco de dados como PostgreSQL, MongoDB. Tenho experiência
+                  utilizando TypeORM e docker.
+                </Text>
+              </Box>
+
+              <Box w="40%">
+                <Text fontSize={25} mb="10">
+                  Contatos
+                </Text>
+
+                <Stack spacing={5}>
+                  <Text>
+                    <Icon as={FiMapPin} fontSize="25" mr="2" />
+                    Av. Belmiro Amorim, 38A, Santa Lúcia, Maceió - Alagoas, Brasil
+                  </Text>
+
+                  <Text>
+                    <Icon as={FiMail} fontSize="25" mr="2" />
+                    alvaroneto.dev@gmail.com
+                  </Text>
+
+                  <Text>
+                    <Icon as={FiSmartphone} fontSize="25" mr="2" />
+                    +55 (82) 9 9683-7371
+                  </Text>
+
+                  <Text>
+                    <Icon as={FiGlobe} fontSize="25" mr="2" />
+                    www.alvaroneto.com
+                  </Text>
+                </Stack>
+              </Box>
+            </Flex>
+
+            <Flex w="100" flexDir="column" alignItems="center" justify="center" mt="10">
+              <Text fontWeight="bold" fontSize="30">
+                Me encontre em
               </Text>
 
-              <Text fontSize={18} textAlign="left">
-                Comecei a programar a 5 anos atrás, terminei a faculdade,
-                e venho estudando e trabalhando,
-                com desenvolvimento de aplicações utilizando as tecnologias
-                AngularJS e ReactJS, como também APIs com nodeJS + express,
-                utilizando TypeScript,
-                utilizando banco de dados como PostgreSQL, MongoDB. Tenho experiência
-                utilizando TypeORM e docker.
-              </Text>
-            </Box>
+              <Divider my="3" />
 
-            <Box w="40%">
-              <Text fontSize={25} mb="10">
-                Contatos
-              </Text>
+              <HStack spacing={5}>
+                <ChakraLink href="https://web.facebook.com/alvaro.neto.50" _hover={{ color: '#5C66B8' }} isExternal>
+                  <Icon as={FiFacebook} fontSize="35" mr="2" />
+                </ChakraLink>
 
-              <Stack spacing={5}>
-                <Text>
-                  <Icon as={FiMapPin} fontSize="25" mr="2" />
-                  Av. Belmiro Amorim, 38A, Santa Lúcia, Maceió - Alagoas, Brasil
-                </Text>
+                <ChakraLink href="https://www.linkedin.com/in/álvaro-neto-932492127/" _hover={{ color: '#0e76a8' }} isExternal>
+                  <Icon as={FiLinkedin} fontSize="35" mr="2" />
+                </ChakraLink>
 
-                <Text>
-                  <Icon as={FiMail} fontSize="25" mr="2" />
-                  alvaroneto.dev@gmail.com
-                </Text>
+                <ChakraLink href="https://github.com/nextinhuh" _hover={{ color: 'black' }} isExternal>
+                  <Icon as={FiGithub} fontSize="35" mr="2" />
+                </ChakraLink>
+              </HStack>
+            </Flex>
+          </Stack>
 
-                <Text>
-                  <Icon as={FiSmartphone} fontSize="25" mr="2" />
-                  +55 (82) 9 9683-7371
-                </Text>
+          <Flex position="relative" top={116} h="10vh" w="100%" bgColor="rgba(10, 10, 10, .55)" alignItems="center" justify="center" mt={10}>
+            <HStack spacing={2}>
+              <Text>Tema feito por</Text>
 
-                <Text>
-                  <Icon as={FiGlobe} fontSize="25" mr="2" />
-                  www.alvaroneto.com
-                </Text>
-              </Stack>
-            </Box>
-          </Flex>
-
-          <Flex w="100" flexDir="column" alignItems="center" justify="center" mt="10">
-            <Text fontWeight="bold" fontSize="30">
-              Me encontre em
-            </Text>
-
-            <Divider my="3" />
-
-            <HStack spacing={5}>
-              <ChakraLink href="https://web.facebook.com/alvaro.neto.50" _hover={{ color: '#5C66B8' }} isExternal>
-                <Icon as={FiFacebook} fontSize="35" mr="2" />
+              <ChakraLink _hover={{ color: '#5C66B8' }}>
+                <Link
+                  activeClass="active"
+                  to="header"
+                  spy
+                  smooth
+                  duration={500}
+                >
+                  <Text fontWeight="bold">
+                    Álvaro Neto
+                  </Text>
+                </Link>
               </ChakraLink>
 
-              <ChakraLink href="https://www.linkedin.com/in/álvaro-neto-932492127/" _hover={{ color: '#0e76a8' }} isExternal>
-                <Icon as={FiLinkedin} fontSize="35" mr="2" />
-              </ChakraLink>
-
-              <ChakraLink href="https://github.com/nextinhuh" _hover={{ color: 'black' }} isExternal>
-                <Icon as={FiGithub} fontSize="35" mr="2" />
-              </ChakraLink>
+              <Text>| © Copyright 2022</Text>
             </HStack>
           </Flex>
         </Box>
-
-        <Flex h="10vh" bgColor="black" alignItems="center" justify="space-between" p={5}>
-          <Text>
-            © Copyright 2021
-          </Text>
-
-          <Text>
-            Tema feito por
-            <ChakraLink _hover={{ color: '#5C66B8' }}>
-              <Link
-                activeClass="active"
-                to="header"
-                spy
-                smooth
-                duration={500}
-              >
-                <Text fontWeight="bold">
-                  Álvaro Neto
-                </Text>
-              </Link>
-            </ChakraLink>
-          </Text>
-        </Flex>
       </Box>
     </>
 

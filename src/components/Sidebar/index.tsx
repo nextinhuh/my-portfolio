@@ -17,7 +17,7 @@ import {
 } from './styles';
 
 export function Sidebar() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   function handleToggleMenuOpen() {
     setIsOpen(!isOpen);
@@ -37,17 +37,40 @@ export function Sidebar() {
         <NavTitle isOpened={isOpen}>Menu</NavTitle>
 
         <NavList isOpened={isOpen}>
-          <NavItemList isOpened={isOpen} active>
+          <NavItemList
+            activeClass="active"
+            to="header"
+            spy
+            smooth
+            duration={500}
+            isOpened={isOpen}
+          >
             <Icon as={AiFillHome} fontSize="22" mr={3} />
+
             <span>Home</span>
           </NavItemList>
 
-          <NavItemList isOpened={isOpen}>
+          <NavItemList
+            activeClass="active"
+            to="skills"
+            spy
+            smooth
+            duration={500}
+            isOpened={isOpen}
+          >
             <Icon as={FiCheckSquare} fontSize="22" mr={3} />
+
             <span>Skills and Jobs</span>
           </NavItemList>
 
-          <NavItemList isOpened={isOpen}>
+          <NavItemList
+            activeClass="active"
+            to="contact"
+            spy
+            smooth
+            duration={500}
+            isOpened={isOpen}
+          >
             <Icon as={FiHelpCircle} fontSize="22" mr={3} />
             <span>About me</span>
           </NavItemList>
